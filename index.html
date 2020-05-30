@@ -50,6 +50,13 @@ html, body {
     height: 100%;
     left: 33%;
 }
+.whatsapp-ui-mobile {
+    width:100% !important;
+    left:0px;
+    position: relative;
+    background-image: url("bg.jpg");
+    height: 100%;
+}
 .dp {
     width: auto;
     height: 50px;
@@ -98,6 +105,9 @@ html, body {
 </style>
 <script>
     jQuery(document).ready(function() {
+        if ($(window).width() < 500) { alert("hi");
+            $(".whatsapp-ui").setAttribute("class","whatsapp-ui-mobile")
+        }
         jQuery("#send").click(function() {
             var dt = new Date();
             var time = dt.getHours() + ":" + dt.getMinutes();
