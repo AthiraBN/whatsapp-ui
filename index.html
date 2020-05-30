@@ -7,18 +7,17 @@
 <body>
 <div class="whatsapp-ui" id="whatsapp-ui">
     <div class="container-fluid">
-        <div class="row">
-            <div class="bg-whatsapp col-12">
-                <div class="row">
-                    <div class="div active col-3 dp-container">
-                        <img src="dp.png" class="dp roundedborder"/>
-                    </div>
-                    <div class="col-9 number">
-                        <p>+91 9876543210 <br/><span>online</span></p>
-                    </div>
+        <div class="row fixed-head">
+        <div class="col-12 bg-whatsapp">
+            <div class="row">
+                <div class="col-3 dp-container">
+                    <img src="dp.png" class="dp roundedborder"/>
+                </div>
+                <div class="col-9 number">
+                    <p>+91 9876543210 <br/><span>online</span></p>
                 </div>
             </div>
-        </div>
+        </div></div>
         <div id="messagecontainer">
         </div> 
             <div class="footer">
@@ -97,6 +96,15 @@ html, body {
 .sendbutton {
     padding: 5px;
     margin: 5px 0px;
+    width: 35px;
+}
+.fixed-head{position: fixed;
+    width: 400px;
+    z-index: 999;}
+.topnav {
+    position: fixed;
+    top:0px;
+    width:100%;
 }
 .footer {
         position: fixed;
