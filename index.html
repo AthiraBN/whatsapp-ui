@@ -5,7 +5,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-<div class="whatsapp-ui">
+<div class="whatsapp-ui" id="whatsapp-ui">
     <div class="container-fluid">
         <div class="row">
             <div class="bg-whatsapp col-12">
@@ -27,7 +27,7 @@
                     <div class="col-10">
                         <input type="text" class="message" id="message" placeholder="Type message" size="35"/>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-2">
                         <button class="bg-whatsapp roundedborder sendbutton" id="send"><i class="fa fa-paper-plane" aria-hidden="true" style="color:white;"></i></button>
                     </div>
                 </div>
@@ -105,8 +105,9 @@ html, body {
 </style>
 <script>
     jQuery(document).ready(function() {
-        if ($(window).width() < 500) { console.log("hi");
-            $(".whatsapp-ui").setAttribute("class","whatsapp-ui-mobile")
+        if ($(window).width() < 500) { alert("hi");
+            $("#whatsapp-ui").removeClass("whatsapp-ui");
+            $("#whatsapp-ui").addClass("whatsapp-ui-mobile");
         }
         jQuery("#send").click(function() {
             var dt = new Date();
