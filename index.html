@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="whatsapp-ui">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="bg-whatsapp col-12">
+                <div class="row">
+                    <div class="div active col-3 dp-container">
+                        <img src="dp.png" class="dp roundedborder"/>
+                    </div>
+                    <div class="col-9 number">
+                        <p>+91 9876543210 <br/><span>online</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="messagecontainer">
+        </div>
+        <div class="row"> 
+            <div class="col-12 footer">
+                <div class="row">
+                    <div class="col-10">
+                        <input type="text" class="message" id="message" placeholder="Type message" size="35"/>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="bg-whatsapp roundedborder sendbutton" id="send"><i class="fa fa-paper-plane" aria-hidden="true" style="color:white;"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.bg-whatsapp {
+    background: #1c5d54;
+}
+.whatsapp-ui {
+    position: relative;
+    width:400px;
+    background-image: url("bg.jpg");
+    height: 100%;
+}
+.dp {
+    width: auto;
+    height: 50px;
+}
+.dp-container {
+    margin: 5px 0px;
+}
+.sentmessage {
+    background: #e2ffc7;
+    padding: 5px 20px;
+    margin: 5px;
+    width: 75%;
+    float:right;
+}
+.reply {
+    background: white;
+    padding: 5px 20px;
+    margin: 5px;
+    width: 75%;
+}
+.number {
+    padding: 5px 0px;
+    font-size: 15px;
+    color: white;
+}
+.number span {
+    font-size: 12px;
+}
+.roundedborder {
+    border-radius: 50%;
+}
+.message {
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+.sendbutton {
+    padding: 5px;
+    margin: 5px 0px;
+}
+.footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+</style>
+<script>
+    jQuery(document).ready(function() {
+        jQuery("#send").click(function() {
+            var dt = new Date();
+            var time = dt.getHours() + ":" + dt.getMinutes();
+            var sentmessage = $("#message").val();
+            $("#messagecontainer").append('<div class="row"><div class="col-12"><p class="float-right sentmessage" id="sentmessage">'+sentmessage+'<span style="font-size:10px; float:right;">'+time+'</span></p></div></div>');
+            $("#messagecontainer").append('<div class="row"><div class="col-12"><p class="reply" id="reply">Reply</p></div></div>');
+            $("#message").val("");
+        });
+    });
+</script>
+</body>
